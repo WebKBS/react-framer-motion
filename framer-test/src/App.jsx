@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 function App() {
@@ -7,7 +8,15 @@ function App() {
 
   return (
     <div id="demo">
-      <div id="box" />
+      <motion.div
+        id="box"
+        animate={{ x: x, y: y, rotate: rotate }}
+        transition={{
+          duration: 0.3, // 지속시간
+          type: 'spring', // 각 타입의 효과가 있다.
+          bounce: 2, // 떨림 제어
+        }}
+      />
 
       <div id="inputs">
         <p>
